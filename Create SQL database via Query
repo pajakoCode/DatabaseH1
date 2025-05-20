@@ -1,3 +1,8 @@
+# Creating an SQL database manually with a Query (File > New > Query) 
+
+### 1. Database and table creation ###################################################################################
+----------------------------------------------------------------------------------------------------------------------
+
 use master;
 GO
 create database test;
@@ -13,3 +18,4 @@ create table Workforce
 	Constraint PK_Workforce Primary Key(ID)
 );
 GO
+

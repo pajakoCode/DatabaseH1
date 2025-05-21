@@ -1,0 +1,23 @@
+use master;
+GO
+create database Company;
+GO
+use Company;
+GO
+create table Department
+(
+	Deptno int not null identity,
+	Dname varchar(50) not null,
+	Startdate DATETIME not null DEFAULT GETDATE(),
+	NumOfEmps INT null,
+	Constraint PK_dept_deptno PRIMARY KEY (deptno)
+);
+GO
+create table Location (
+    Deptno INT not null,
+    Location VARCHAR(100) not null,
+    Constraint PK_location_dept_location PRIMARY KEY (Deptno, Location),
+    Constraint FK_location_deptno FOREIGN KEY (Deptno)
+	REFERENCES Department(Deptno)
+);
+GO
